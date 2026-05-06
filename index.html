@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO AIO Intel Report | dexfinity.com</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Questrial&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #05024E;
+      --blue: #0065F7;
+      --teal: #16AB8B;
+      --orange: #ff7f00;
+      --light: #F6F8FF;
+      --muted: #8892B0;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--light);
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav img { height: 36px; }
+    nav .nav-label {
+      font-family: 'Questrial', sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      padding: 52px 40px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      border: 60px solid rgba(255,255,255,0.04);
+      top: -120px; right: -80px;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: 40px solid rgba(0,101,247,0.12);
+      bottom: -60px; left: 200px;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-family: 'Questrial', sans-serif;
+      font-size: 36px;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-badge strong { color: var(--white); }
+
+    /* MAIN */
+    main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* PAGE SECTION */
+    .page-section { margin-bottom: 56px; }
+    .page-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--navy);
+    }
+    .page-title {
+      font-family: 'Questrial', sans-serif;
+      font-size: 20px;
+      color: var(--navy);
+    }
+    .page-url {
+      font-size: 12px;
+      color: var(--muted);
+      font-family: monospace;
+    }
+    .page-url a { color: var(--blue); text-decoration: none; }
+    .page-url a:hover { text-decoration: underline; }
+
+    /* KEYWORD GRID */
+    .keyword-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    /* KEYWORD CARD */
+    .kw-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(5,2,78,0.06);
+      border-top: 3px solid var(--blue);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .kw-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(5,2,78,0.1);
+    }
+    .kw-card.pos-top { border-top-color: var(--teal); }
+    .kw-card.pos-mid { border-top-color: var(--blue); }
+    .kw-card.pos-low { border-top-color: var(--orange); }
+
+    .kw-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 16px;
+      min-height: 36px;
+      line-height: 1.4;
+    }
+
+    .kw-position {
+      font-family: 'Questrial', sans-serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .kw-card.pos-top .kw-position { color: var(--teal); }
+    .kw-card.pos-mid .kw-position { color: var(--blue); }
+    .kw-card.pos-low .kw-position { color: var(--orange); }
+
+    .kw-pos-label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .kw-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--light);
+    }
+    .kw-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+    .kw-stat-label { color: var(--muted); }
+    .kw-stat-value { font-weight: 600; color: var(--navy); }
+
+    .kw-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 20px;
+    }
+    .kw-trend.up { background: rgba(22,171,139,0.12); color: var(--teal); }
+    .kw-trend.down { background: rgba(255,127,0,0.12); color: var(--orange); }
+    .kw-trend.same { background: rgba(136,146,176,0.12); color: var(--muted); }
+
+    /* BASELINE NOTE */
+    .baseline-note {
+      background: var(--white);
+      border: 1px solid rgba(5,2,78,0.08);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    .baseline-note strong { color: var(--navy); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 40px;
+      text-align: center;
+    }
+    footer img { height: 40px; margin-bottom: 12px; opacity: 0.9; }
+    .footer-tagline {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    footer p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 36px 20px 32px; }
+      .hero h1 { font-size: 26px; }
+      main { padding: 32px 16px 60px; }
+      .keyword-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <img src="https://www.dexfinity.com/wp-content/uploads/2021/03/Logo-Small-Light-Landscape@2x.png" alt="Dexfinity">
+  <span class="nav-label">SEO AIO Intel</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">dexfinity.com</div>
+  <h1>SEO AIO Intel Report</h1>
+  <p class="hero-sub">Sledovanie pozícií kľúčových slov pre aktualizované landing pages</p>
+  <div class="hero-meta">
+    <div class="hero-badge">Baseline <strong>6. mája 2026</strong></div>
+    <div class="hero-badge">Google SK <strong>Collabim + GSC</strong></div>
+    <div class="hero-badge">Stránky <strong>1</strong> &nbsp;·&nbsp; Kľúčové slová <strong>4</strong></div>
+  </div>
+</div>
+
+<main>
+
+  <div class="baseline-note">
+    <strong>Ako čítať tento report.</strong> Pozície sú merané cez Collabim (Google SK). GSC impressions a kliky sú kumulatívne za posledných 28 dní. Trend ukazuje zmenu oproti predchádzajúcemu týždňu. Stránky boli aktualizované <strong>1. mája 2026</strong>, Google re-indexovanie trvá 1 až 4 týždne.
+  </div>
+
+  <!-- PAGE: /dexguide/kpi/ -->
+  <div class="page-section">
+    <div class="page-header">
+      <span class="page-title">Čo je KPI?</span>
+      <span class="page-url"><a href="https://www.dexfinity.com/dexguide/kpi/" target="_blank">dexfinity.com/dexguide/kpi/</a></span>
+    </div>
+
+    <div class="keyword-grid">
+
+      <!-- kpi -->
+      <div class="kw-card pos-mid">
+        <div class="kw-text">kpi</div>
+        <div class="kw-position">7</div>
+        <div class="kw-pos-label">Google SK · pozícia</div>
+        <div class="kw-stats">
+          <div class="kw-stat">
+            <span class="kw-stat-label">Hľadanosť / mes</span>
+            <span class="kw-stat-value">1 600</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Impressions (28d)</span>
+            <span class="kw-stat-value">4 728</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Kliky (28d)</span>
+            <span class="kw-stat-value">17</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">CTR</span>
+            <span class="kw-stat-value">0.36%</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Trend</span>
+            <span class="kw-trend up">↑ +2</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- kpis -->
+      <div class="kw-card pos-top">
+        <div class="kw-text">kpis</div>
+        <div class="kw-position">3</div>
+        <div class="kw-pos-label">Google SK · pozícia</div>
+        <div class="kw-stats">
+          <div class="kw-stat">
+            <span class="kw-stat-label">Hľadanosť / mes</span>
+            <span class="kw-stat-value">1 600</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Impressions (28d)</span>
+            <span class="kw-stat-value">481</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Kliky (28d)</span>
+            <span class="kw-stat-value">5</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">CTR</span>
+            <span class="kw-stat-value">1.04%</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Trend</span>
+            <span class="kw-trend down">↓ -1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- kpi ukazovatele -->
+      <div class="kw-card pos-top">
+        <div class="kw-text">kpi ukazovatele</div>
+        <div class="kw-position">4</div>
+        <div class="kw-pos-label">Google SK · pozícia</div>
+        <div class="kw-stats">
+          <div class="kw-stat">
+            <span class="kw-stat-label">Hľadanosť / mes</span>
+            <span class="kw-stat-value">210</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Impressions (28d)</span>
+            <span class="kw-stat-value">479</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Kliky (28d)</span>
+            <span class="kw-stat-value">6</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">CTR</span>
+            <span class="kw-stat-value">1.25%</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Trend</span>
+            <span class="kw-trend up">↑ +2</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- kpi kľúčový ukazovateľ výkonnosti -->
+      <div class="kw-card pos-top">
+        <div class="kw-text">kpi – kľúčový ukazovateľ výkonnosti</div>
+        <div class="kw-position">3</div>
+        <div class="kw-pos-label">Google SK · pozícia</div>
+        <div class="kw-stats">
+          <div class="kw-stat">
+            <span class="kw-stat-label">Hľadanosť / mes</span>
+            <span class="kw-stat-value">&lt; 10</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Impressions (28d)</span>
+            <span class="kw-stat-value">—</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Kliky (28d)</span>
+            <span class="kw-stat-value">—</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">CTR</span>
+            <span class="kw-stat-value">—</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Trend</span>
+            <span class="kw-trend same">→ 0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <img src="https://www.dexfinity.com/wp-content/uploads/2021/03/Logo-Small-Dark-Landscape@2x.png" alt="Dexfinity">
+  <div class="footer-tagline">Go Beyond</div>
+  <p>hello@dexfinity.com &nbsp;·&nbsp; +421 918 435 105</p>
+</footer>
+
+</body>
+</html>
