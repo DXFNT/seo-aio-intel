@@ -240,6 +240,200 @@
       color: rgba(255,255,255,0.35);
     }
 
+    /* CHANGELOG */
+    .changelog { margin-bottom: 56px; }
+    .changelog-title {
+      font-family: 'Questrial', sans-serif;
+      font-size: 16px;
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--navy);
+    }
+    .cl-entry {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(5,2,78,0.05);
+      border-left: 4px solid var(--blue);
+    }
+    .cl-date {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .cl-page {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 10px 0 4px;
+    }
+    .cl-page:first-of-type { margin-top: 0; }
+    .cl-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cl-items li {
+      font-size: 12px;
+      color: #4a5068;
+      padding: 3px 0 3px 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .cl-items li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    /* ALERT BOX */
+    .alert-box {
+      background: rgba(255,127,0,0.06);
+      border: 1px solid rgba(255,127,0,0.2);
+      border-left: 4px solid var(--orange);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .alert-box strong { color: var(--orange); }
+
+    /* ORGANIC HEALTH SECTION */
+    .organic-section { margin-bottom: 56px; }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .comparison-block {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 22px 24px;
+      box-shadow: 0 2px 8px rgba(5,2,78,0.06);
+    }
+
+    .comp-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .comp-sub {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .metric-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .metric-tile {
+      flex: 1;
+      background: var(--light);
+      border-radius: 8px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .metric-val {
+      font-family: 'Questrial', sans-serif;
+      font-size: 26px;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 3px;
+    }
+
+    .metric-name {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .metric-delta {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .metric-delta.up { background: rgba(22,171,139,0.12); color: var(--teal); }
+    .metric-delta.down { background: rgba(255,127,0,0.12); color: var(--orange); }
+    .metric-delta.neutral { background: rgba(136,146,176,0.12); color: var(--muted); }
+
+    /* WINNERS / LOSERS */
+    .wl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .wl-block {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 8px rgba(5,2,78,0.06);
+    }
+    .wl-block.winners { border-top: 3px solid var(--teal); }
+    .wl-block.losers { border-top: 3px solid var(--orange); }
+
+    .wl-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .wl-block.winners .wl-title { color: var(--teal); }
+    .wl-block.losers .wl-title { color: var(--orange); }
+
+    .wl-table { width: 100%; border-collapse: collapse; }
+    .wl-table th {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--muted);
+      text-align: left;
+      padding: 0 0 8px;
+      border-bottom: 1px solid var(--light);
+    }
+    .wl-table th:last-child { text-align: right; }
+    .wl-table td {
+      font-size: 12px;
+      color: var(--navy);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--light);
+      vertical-align: middle;
+    }
+    .wl-table tr:last-child td { border-bottom: none; }
+    .wl-table td:last-child { text-align: right; }
+    .wl-kw { font-weight: 500; max-width: 140px; }
+    .wl-prev { font-size: 10px; color: var(--muted); }
+    .wl-delta-up { font-weight: 700; color: var(--teal); }
+    .wl-delta-down { font-weight: 700; color: var(--orange); }
+
+    @media (max-width: 600px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+      .wl-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 600px) {
       nav { padding: 0 20px; }
       .hero { padding: 36px 20px 32px; }
@@ -261,16 +455,176 @@
   <h1>SEO AIO Intel Report</h1>
   <p class="hero-sub">Sledovanie pozícií kľúčových slov pre aktualizované landing pages</p>
   <div class="hero-meta">
-    <div class="hero-badge">Aktualizovaný <strong>18. mája 2026</strong></div>
-    <div class="hero-badge">Google SK <strong>Collabim + GSC</strong></div>
-    <div class="hero-badge">Stránky <strong>2</strong> &nbsp;·&nbsp; Kľúčové slová <strong>6</strong></div>
+    <div class="hero-badge">Aktualizovaný <strong>20. mája 2026</strong></div>
+    <div class="hero-badge">Google SK <strong>GSC 7d + 28d + YoY</strong></div>
+    <div class="hero-badge">Stránky <strong>2</strong> &nbsp;·&nbsp; Kľúčové slová <strong>8</strong></div>
   </div>
 </div>
 
 <main>
 
   <div class="baseline-note">
-    <strong>Ako čítať tento report.</strong> Pozície sú merané cez Collabim (Google SK). GSC impressions a kliky sú kumulatívne za posledných 28 dní. Trend ukazuje zmenu oproti predchádzajúcemu týždňu. Stránky boli aktualizované <strong>1. mája 2026</strong>, Google re-indexovanie trvá 1 až 4 týždne.
+    <strong>Ako čítať tento report.</strong> Pozície sú 28-dňový priemer z GSC (Google SK), filtrované per stránka. Impressions a kliky sú za 28 dní (22. apr. až 19. máj 2026). Trend (7d) porovnáva priemernú pozíciu posledných 7 dní voči 28d priemeru. Stránky boli aktualizované <strong>1. mája 2026</strong>.
+  </div>
+
+  <!-- ORGANIC HEALTH OVERVIEW -->
+  <div class="organic-section">
+    <div class="page-header">
+      <span class="page-title">Celkový organic health — dexfinity.com</span>
+      <span class="page-url">GSC · Site-wide</span>
+    </div>
+
+    <div class="comparison-grid">
+
+      <!-- 30d vs 30d -->
+      <div class="comparison-block">
+        <div class="comp-label">30d vs predchádzajúcich 30d</div>
+        <div class="comp-sub">20. apr – 19. máj 2026 &nbsp;vs&nbsp; 21. mar – 19. apr 2026</div>
+        <div class="metric-row">
+          <div class="metric-tile">
+            <div class="metric-val">972</div>
+            <div class="metric-name">Kliky</div>
+            <div class="metric-delta down">-10.9% (bolo 1 091)</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-val">296k</div>
+            <div class="metric-name">Impressions</div>
+            <div class="metric-delta down">-51% (bolo 604k)</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-val">0.33%</div>
+            <div class="metric-name">CTR</div>
+            <div class="metric-delta up">+0.15 pp (bolo 0.18%)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YoY -->
+      <div class="comparison-block">
+        <div class="comp-label">YoY — rovnaké obdobie</div>
+        <div class="comp-sub">20. apr – 19. máj 2026 &nbsp;vs&nbsp; 20. apr – 19. máj 2025</div>
+        <div class="metric-row">
+          <div class="metric-tile">
+            <div class="metric-val">972</div>
+            <div class="metric-name">Kliky</div>
+            <div class="metric-delta down">-25% (2025: 1 297)</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-val">296k</div>
+            <div class="metric-name">Impressions</div>
+            <div class="metric-delta up">+24% (2025: 239k)</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-val">11.0</div>
+            <div class="metric-name">Avg pozícia</div>
+            <div class="metric-delta up">+16.7 miest (2025: 27.7)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="alert-box">
+      <strong>Prečo -51% impressions (30d vs 30d)?</strong> Pokles dominuje dopyt "pinterest" — 293k impressions v mar/apr vs 84k v apr/máj. Toto nie je Dexfinity content problém, ide o sezónny pokles externého dopytu pre tento term. Skutočné Dexfinity keywords (kpi, generácie, linkedin, google ads) sú stabilné alebo rastú. CTR sa naopak zlepšil (0.18% → 0.33%) — signál, že stránky ktoré rankujú dostávajú relevantnejší traffic.
+    </div>
+
+    <div class="wl-grid">
+
+      <!-- WINNERS -->
+      <div class="wl-block winners">
+        <div class="wl-title">WINNERS — najväčší rast kliknutí (30d vs 30d)</div>
+        <table class="wl-table">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Predtým</th>
+              <th>Teraz</th>
+              <th>Zmena</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="wl-kw">dexfinity</td>
+              <td class="wl-prev">151</td>
+              <td>164</td>
+              <td><span class="wl-delta-up">+13</span></td>
+            </tr>
+            <tr>
+              <td class="wl-kw">generácia z</td>
+              <td class="wl-prev">7</td>
+              <td>16</td>
+              <td><span class="wl-delta-up">+9</span></td>
+            </tr>
+            <tr>
+              <td class="wl-kw">generácia x</td>
+              <td class="wl-prev">18</td>
+              <td>24</td>
+              <td><span class="wl-delta-up">+6</span></td>
+            </tr>
+            <tr>
+              <td class="wl-kw">kpi</td>
+              <td class="wl-prev">4</td>
+              <td>8</td>
+              <td><span class="wl-delta-up">+4</span></td>
+            </tr>
+            <tr>
+              <td class="wl-kw">linkedin</td>
+              <td class="wl-prev">0</td>
+              <td>13</td>
+              <td><span class="wl-delta-up">+13</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- LOSERS -->
+      <div class="wl-block losers">
+        <div class="wl-title">LOSERS — najväčší pokles kliknutí (30d vs 30d)</div>
+        <table class="wl-table">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Predtým</th>
+              <th>Teraz</th>
+              <th>Zmena</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="wl-kw">linkedin v slovenčine</td>
+              <td class="wl-prev">52</td>
+              <td>22</td>
+              <td><span class="wl-delta-down">-30</span></td>
+            </tr>
+            <tr>
+              <td class="wl-kw">pinterest</td>
+              <td class="wl-prev">43</td>
+              <td>14</td>
+              <td><span class="wl-delta-down">-29</span></td>
+            </tr>
+            <tr>
+              <td class="wl-kw">midjourney</td>
+              <td class="wl-prev">9</td>
+              <td>3</td>
+              <td><span class="wl-delta-down">-6</span></td>
+            </tr>
+            <tr>
+              <td class="wl-kw">asmr meaning</td>
+              <td class="wl-prev">16</td>
+              <td>11</td>
+              <td><span class="wl-delta-down">-5</span></td>
+            </tr>
+            <tr>
+              <td class="wl-kw">google market finder</td>
+              <td class="wl-prev">15</td>
+              <td>11</td>
+              <td><span class="wl-delta-down">-4</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
   </div>
 
   <!-- PAGE: /dexguide/kpi/ -->
@@ -283,39 +637,10 @@
     <div class="keyword-grid">
 
       <!-- kpi -->
-      <div class="kw-card pos-low">
-        <div class="kw-text">kpi</div>
-        <div class="kw-position">8</div>
-        <div class="kw-pos-label">Google SK · pozícia</div>
-        <div class="kw-stats">
-          <div class="kw-stat">
-            <span class="kw-stat-label">Hľadanosť / mes</span>
-            <span class="kw-stat-value">1 600</span>
-          </div>
-          <div class="kw-stat">
-            <span class="kw-stat-label">Impressions (28d)</span>
-            <span class="kw-stat-value">4 728</span>
-          </div>
-          <div class="kw-stat">
-            <span class="kw-stat-label">Kliky (28d)</span>
-            <span class="kw-stat-value">17</span>
-          </div>
-          <div class="kw-stat">
-            <span class="kw-stat-label">CTR</span>
-            <span class="kw-stat-value">0.36%</span>
-          </div>
-          <div class="kw-stat">
-            <span class="kw-stat-label">Trend</span>
-            <span class="kw-trend up">↑ +6</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- kpis -->
       <div class="kw-card pos-mid">
-        <div class="kw-text">kpis</div>
-        <div class="kw-position">4</div>
-        <div class="kw-pos-label">Google SK · pozícia</div>
+        <div class="kw-text">kpi</div>
+        <div class="kw-position">6</div>
+        <div class="kw-pos-label">Google SK · 28d avg</div>
         <div class="kw-stats">
           <div class="kw-stat">
             <span class="kw-stat-label">Hľadanosť / mes</span>
@@ -323,28 +648,28 @@
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Impressions (28d)</span>
-            <span class="kw-stat-value">481</span>
+            <span class="kw-stat-value">1 038</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Kliky (28d)</span>
-            <span class="kw-stat-value">5</span>
+            <span class="kw-stat-value">8</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">CTR</span>
-            <span class="kw-stat-value">1.04%</span>
+            <span class="kw-stat-value">0.77%</span>
           </div>
           <div class="kw-stat">
-            <span class="kw-stat-label">Trend</span>
-            <span class="kw-trend same">→ 0</span>
+            <span class="kw-stat-label">Trend (7d)</span>
+            <span class="kw-trend up">↑ +1</span>
           </div>
         </div>
       </div>
 
       <!-- kpi ukazovatele -->
-      <div class="kw-card pos-low">
+      <div class="kw-card pos-top">
         <div class="kw-text">kpi ukazovatele</div>
-        <div class="kw-position">8</div>
-        <div class="kw-pos-label">Google SK · pozícia</div>
+        <div class="kw-position">3</div>
+        <div class="kw-pos-label">Google SK · 28d avg</div>
         <div class="kw-stats">
           <div class="kw-stat">
             <span class="kw-stat-label">Hľadanosť / mes</span>
@@ -352,48 +677,77 @@
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Impressions (28d)</span>
-            <span class="kw-stat-value">479</span>
+            <span class="kw-stat-value">123</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Kliky (28d)</span>
-            <span class="kw-stat-value">6</span>
+            <span class="kw-stat-value">3</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">CTR</span>
-            <span class="kw-stat-value">1.25%</span>
+            <span class="kw-stat-value">2.44%</span>
           </div>
           <div class="kw-stat">
-            <span class="kw-stat-label">Trend</span>
-            <span class="kw-trend down">↓ -4</span>
+            <span class="kw-stat-label">Trend (7d)</span>
+            <span class="kw-trend up">↑ +1</span>
           </div>
         </div>
       </div>
 
-      <!-- kpi kľúčový ukazovateľ výkonnosti -->
+      <!-- kpi skratka -->
       <div class="kw-card pos-mid">
-        <div class="kw-text">kpi – kľúčový ukazovateľ výkonnosti</div>
-        <div class="kw-position">7</div>
-        <div class="kw-pos-label">Google SK · pozícia</div>
+        <div class="kw-text">kpi skratka</div>
+        <div class="kw-position">5</div>
+        <div class="kw-pos-label">Google SK · 28d avg</div>
         <div class="kw-stats">
           <div class="kw-stat">
             <span class="kw-stat-label">Hľadanosť / mes</span>
-            <span class="kw-stat-value">&lt; 10</span>
+            <span class="kw-stat-value">—</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Impressions (28d)</span>
-            <span class="kw-stat-value">—</span>
+            <span class="kw-stat-value">249</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Kliky (28d)</span>
-            <span class="kw-stat-value">—</span>
+            <span class="kw-stat-value">1</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">CTR</span>
+            <span class="kw-stat-value">0.40%</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Trend (7d)</span>
+            <span class="kw-trend up">↑ +1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- čo je kpi -->
+      <div class="kw-card pos-mid">
+        <div class="kw-text">čo je kpi</div>
+        <div class="kw-position">5</div>
+        <div class="kw-pos-label">Google SK · 28d avg</div>
+        <div class="kw-stats">
+          <div class="kw-stat">
+            <span class="kw-stat-label">Hľadanosť / mes</span>
             <span class="kw-stat-value">—</span>
           </div>
           <div class="kw-stat">
-            <span class="kw-stat-label">Trend</span>
-            <span class="kw-trend same">→ 0</span>
+            <span class="kw-stat-label">Impressions (28d)</span>
+            <span class="kw-stat-value">86</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Kliky (28d)</span>
+            <span class="kw-stat-value">1</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">CTR</span>
+            <span class="kw-stat-value">1.16%</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Trend (7d)</span>
+            <span class="kw-trend up">↑ +1</span>
           </div>
         </div>
       </div>
@@ -408,21 +762,25 @@
       <span class="page-url"><a href="https://www.dexfinity.com/dexguide/google-adwords/" target="_blank">dexfinity.com/dexguide/google-adwords/</a></span>
     </div>
 
+    <div class="alert-box">
+      <strong>Diagnóza: 0 kliknutí na všetkých keywords za 28 dní.</strong> Najväčší keyword "adwords seo" (881 impresií, pos. 9) nesúvisí s obsahom stránky. Google indexuje stránku pre nesprávne query intencie. Priorita: aktualizovať meta title a description, zamerať sa na "ako funguje google adwords" (pos. 6) a "google ads co to je".
+    </div>
+
     <div class="keyword-grid">
 
-      <!-- google ads -->
-      <div class="kw-card pos-low">
-        <div class="kw-text">google ads</div>
-        <div class="kw-position">14</div>
-        <div class="kw-pos-label">Google SK · pozícia</div>
+      <!-- adwords seo -->
+      <div class="kw-card pos-mid">
+        <div class="kw-text">adwords seo ⚠</div>
+        <div class="kw-position">9</div>
+        <div class="kw-pos-label">Google SK · 28d avg</div>
         <div class="kw-stats">
           <div class="kw-stat">
             <span class="kw-stat-label">Hľadanosť / mes</span>
-            <span class="kw-stat-value">14 800</span>
+            <span class="kw-stat-value">—</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Impressions (28d)</span>
-            <span class="kw-stat-value">460</span>
+            <span class="kw-stat-value">881</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Kliky (28d)</span>
@@ -433,17 +791,75 @@
             <span class="kw-stat-value">0%</span>
           </div>
           <div class="kw-stat">
-            <span class="kw-stat-label">Trend</span>
-            <span class="kw-trend up">↑ +16</span>
+            <span class="kw-stat-label">Trend (7d)</span>
+            <span class="kw-trend same">→ 0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- google ads -->
+      <div class="kw-card pos-low">
+        <div class="kw-text">google ads</div>
+        <div class="kw-position">15</div>
+        <div class="kw-pos-label">Google SK · 28d avg</div>
+        <div class="kw-stats">
+          <div class="kw-stat">
+            <span class="kw-stat-label">Hľadanosť / mes</span>
+            <span class="kw-stat-value">14 800</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Impressions (28d)</span>
+            <span class="kw-stat-value">265</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Kliky (28d)</span>
+            <span class="kw-stat-value">0</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">CTR</span>
+            <span class="kw-stat-value">0%</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Trend (7d)</span>
+            <span class="kw-trend up">↑ +1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ako funguje google adwords -->
+      <div class="kw-card pos-mid">
+        <div class="kw-text">ako funguje google adwords</div>
+        <div class="kw-position">6</div>
+        <div class="kw-pos-label">Google SK · 28d avg</div>
+        <div class="kw-stats">
+          <div class="kw-stat">
+            <span class="kw-stat-label">Hľadanosť / mes</span>
+            <span class="kw-stat-value">—</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Impressions (28d)</span>
+            <span class="kw-stat-value">111</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Kliky (28d)</span>
+            <span class="kw-stat-value">0</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">CTR</span>
+            <span class="kw-stat-value">0%</span>
+          </div>
+          <div class="kw-stat">
+            <span class="kw-stat-label">Trend (7d)</span>
+            <span class="kw-trend down">↓ -1</span>
           </div>
         </div>
       </div>
 
       <!-- google adwords -->
-      <div class="kw-card pos-mid">
+      <div class="kw-card pos-low">
         <div class="kw-text">google adwords</div>
-        <div class="kw-position">6</div>
-        <div class="kw-pos-label">Google SK · pozícia</div>
+        <div class="kw-position">24</div>
+        <div class="kw-pos-label">Google SK · 28d avg</div>
         <div class="kw-stats">
           <div class="kw-stat">
             <span class="kw-stat-label">Hľadanosť / mes</span>
@@ -451,24 +867,58 @@
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Impressions (28d)</span>
-            <span class="kw-stat-value">11 343</span>
+            <span class="kw-stat-value">39</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">Kliky (28d)</span>
-            <span class="kw-stat-value">1</span>
+            <span class="kw-stat-value">0</span>
           </div>
           <div class="kw-stat">
             <span class="kw-stat-label">CTR</span>
-            <span class="kw-stat-value">0.01%</span>
+            <span class="kw-stat-value">0%</span>
           </div>
           <div class="kw-stat">
-            <span class="kw-stat-label">Trend</span>
-            <span class="kw-trend same">→ 0</span>
+            <span class="kw-stat-label">Trend (7d)</span>
+            <span class="kw-trend up">↑ +2</span>
           </div>
         </div>
       </div>
 
     </div>
+  </div>
+
+
+  <!-- CHANGELOG -->
+  <div class="changelog">
+    <div class="changelog-title">Changelog</div>
+
+    <div class="cl-entry">
+      <div class="cl-date">20. mája 2026</div>
+
+      <div class="cl-page">Metodológia</div>
+      <ul class="cl-items">
+        <li>Prechod na page-filtered GSC dáta (28d avg pozícia per stránka). Staré dáta boli site-wide unfiltered — čísla nie sú priamo porovnateľné.</li>
+        <li>Trend (7d) = porovnanie priemernej pozície posledných 7 dní voči 28d priemeru.</li>
+      </ul>
+
+      <div class="cl-page">/dexguide/kpi/</div>
+      <ul class="cl-items">
+        <li>kpi: pos 8 → 6, impressions 4 728 → 1 038 (korekcia: staré číslo bolo site-wide).</li>
+        <li>kpi ukazovatele: pos 8 → 3 — posun do top 3, teal farba, CTR 2.44%.</li>
+        <li>kpis a kpi – kľúčový ukazovateľ výkonnosti nahradené reálnymi GSC keywords: kpi skratka (pos 5, 249 impresií) a čo je kpi (pos 5, 86 impresií).</li>
+        <li>Celkovo všetky 4 keywords v 7d trende ↑ +1 — stránka sa stabilne zlepšuje.</li>
+      </ul>
+
+      <div class="cl-page">/dexguide/google-adwords/</div>
+      <ul class="cl-items">
+        <li>google adwords: pos 6 → 24 — korekcia, staré dáta boli site-wide (11 343 impresií). Page-filtered realita: 39 impresií, pos 24.</li>
+        <li>google ads: pos 14 → 15, 265 impresií — stabilné, ale 0 kliknutí.</li>
+        <li>Nový finding: adwords seo dominuje s 881 impresíami na pos 9 ale 0 kliknutiami — stránka sa indexuje pre nesprávnu query intenciu.</li>
+        <li>ako funguje google adwords pridané: pos 6, 111 impresií, 0 kliknutí — priority keyword pre optimalizáciu meta title/description.</li>
+        <li>Celková diagnóza: 0 kliknutí na všetkých keywords za 28 dní. Potrebná úprava meta tagov.</li>
+      </ul>
+    </div>
+
   </div>
 
 </main>
